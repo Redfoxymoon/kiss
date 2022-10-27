@@ -66,10 +66,11 @@ int main(int argc, char *argv[])
 		printf("%d\n", file_offset);
 
 		pos = ftell(archive);
-		while((c = fgetc(archive)) != 0);
 
 		if(count - 1)
 		{
+			while((c = fgetc(archive)) != 0);
+
 			fread(sbuf, 1, 8, archive);
 			file_offset_next = read_uint64_le(sbuf);
 
